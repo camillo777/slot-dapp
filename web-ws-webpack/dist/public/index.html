@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Dapp Coin Slot</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <section class="section">
+        <div class="is-size-1">Coin Slots</div>
+        <div>Logged {{ logged }}</div>
+        <div v-show="error" class="notification is-danger">{{ errorMessage }}</div>
+        <button v-if="!logged" id="loginButton" type="button" title="Login" @click="login">Login</button>
+        <div v-else>
+          <span>{{ user.publicAddress }}</span>
+          <div>User credits: {{ user ? amountEth : '---' }}</div>
+          <button type="button" title="Deposit" @click="deposit">Buy credits to play</button>
+          <button type="button" title="Logout">Logout</button>
+
+
+          <!--button type="button" title="Get available rooms" @click="getEmptyRooms">Get available rooms</button>
+
+          <details>
+            <summary>Empty rooms</summary>
+            <ul>
+              <li v-for="room in emptyRooms">
+                <a @click="joinRoom(room)">{{room.name}} {{room.users.length}}</a>
+              </li>
+            </ul>
+          </details-->
+
+          <!--details>
+            <summary>Waiting rooms</summary>
+            <ul>
+              <li v-for="room in waitingRooms">
+                <a @click="joinRoom(room)">{{room.name}} {{room.users.length}}</a>
+              </li>
+            </ul>
+          </details-->
+
+          <!--details>
+            <summary>My rooms</summary>
+            <ul>
+              <li v-for="room in myRooms">
+                <a @click="openRoom( room )">{{room}}</a>
+              </li>
+            </ul>
+          </details-->
+
+          <div>
+            <a @click="openRoom( 'slot0' )">Open slot game room</a>
+          </div>
+          
+          <div id="game-div"></div>
+
+        </div>
+
+        
+      </section>
+    </div>
+
+    <script src="app.js" type="module"></script>
+    
+  </body>
+</html>

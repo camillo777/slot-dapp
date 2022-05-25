@@ -1,0 +1,58 @@
+import { ethers } from "./ethers-5.1.esm.min.js";
+
+class UserWeb {
+    tag = 'User'
+
+    constructor( userID ) {
+        this.id = userID;
+    }
+
+    joinRoom( roomID ) {
+        this.rooms.push( roomID );
+    }
+
+    addAmount( amount ) {
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        this.amount = this.amount.add( amount );
+    }
+
+    removeAmount( amount ) {
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        this.amount = this.amount.sub( amount );
+        if (this.amount < 0) this.amount = ethers.BigNumber.from(0);
+    }
+
+    getAmount() {
+        return this.amount;
+    }
+
+    generateNonce() { 
+        console.log( this.tag, 'generateNonce' );
+        return Math.floor(Math.random() * 1000000); 
+    }
+
+    updateNonce() {
+        console.log( this.tag, 'updateNonce', publicAddress );
+        this.nonce = this.generateNonce();
+    }
+
+    static fromJSON( json ) {
+        var user = new User( json.userID )
+        user.address = json.address ? json.address : null
+        user.amount = json.amount ? ethers.BigNumber.from( json.amount ) : ethers.BigNumber.from( 0 )
+        user.rooms = json.room ? json.rooms : []
+
+        return user
+    }
+
+    toJSON() {
+        return {
+            id: this.userID,
+            address: this.address,
+            amount: this.amount.toHexString(),
+            rooms: this.rooms
+        }
+    }
+}
+
+export { UserWeb }

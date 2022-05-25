@@ -1,0 +1,15 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+
+/db.json
+.env*
+package-lock.json
+config.js
+db
+*.sqlite

@@ -1,0 +1,74 @@
+import assert from 'assert';
+import ethers from 'ethers';
+
+export default class EvtService {
+
+    tag = 'EvtService';
+
+    constructor( users, jackpot ) {
+        this.users = [];
+        this.init( users );
+        this.jackpot = jackpot;
+    }
+
+    async init( users ) {
+        await users.forEach( (user) => {
+            const userAddress = user[0];
+            const amount = user[1];
+            assert( ethers.BigNumber.isBigNumber( amount ) );
+            this.users.push( { userAddress: userAddress, amount: amount } );
+        } );
+        console.log( this.users );
+    }
+
+    addJackpot( amount ) {
+        this.jackpot = this.jackpot.add( amount );
+    }
+
+    async addUserAmount( userAddress, amount ) {
+        console.log( this.tag, 'addUserAmount', userAddress, amount );
+        var user = await this.getUser( userAddress );
+        if (!user) throw `User ${userAddress} does not exist`;
+        console.log( user.amount );
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        assert( ethers.BigNumber.isBigNumber( user.amount ) );
+        user.amount = user.amount.add( amount );
+    }
+    async removeUserAmount( userAddress, amount ) {
+        console.log( this.tag, 'removeUserAmount', userAddress, amount );
+        var user = await this.getUser( userAddress );
+        if (!user) throw `User ${userAddress} does not exist`;
+        console.log( user.amount );
+        user.amount = user.amount.sub( amount );
+        if (user.amount < 0) user.amount = 0;
+    }
+
+    async getJackpot() { 
+        return this.jackpot; 
+    }
+
+    async userExists( userAddress ) {
+        console.log( this.tag, 'userExists', userAddress );
+        let user = await this.users.find( (user) => { return user.userAddress == userAddress } );
+        return user ? true : false;
+    }
+
+    async getUser( userAddress ) {
+        console.log( this.tag, 'getUser', userAddress );
+        return await this.users.find( (user) => user.userAddress == userAddress );
+    }
+
+    async createUser( userAddress ) {
+        console.log( this.tag, 'createUser', userAddress );
+        let user = { userAddress: userAddress, amount: ethers.BigNumber.from(0) };
+        this.users.push( user );
+    }
+
+    async getUserAmount( userAddress ) {
+        console.log( this.tag, 'getUserAmount', userAddress );
+        var user = await this.getUser( userAddress );
+        if (!user) throw `User ${userAddress} does not exist`;
+        return user.amount;
+    }
+    
+}

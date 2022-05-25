@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg6185"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="panel.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6187"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2"
+     inkscape:cx="291.25"
+     inkscape:cy="381.25"
+     inkscape:window-width="1440"
+     inkscape:window-height="855"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs6182">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9590">
+      <stop
+         style="stop-color:#ffd18c;stop-opacity:1"
+         offset="0"
+         id="stop9586" />
+      <stop
+         style="stop-color:#926300;stop-opacity:1"
+         offset="1"
+         id="stop9588" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient8547"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#6b0000;stop-opacity:1;"
+         offset="0"
+         id="stop8545" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9590"
+       id="linearGradient9592"
+       x1="45.947369"
+       y1="64.894737"
+       x2="114.1579"
+       y2="133.10526"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:label="Dark Emboss"
+       inkscape:menu="Bumps"
+       inkscape:menu-tooltip="Emboss effect : 3D relief where white is replaced by black"
+       style="color-interpolation-filters:sRGB;"
+       id="filter10606"
+       x="-0.01513696"
+       y="-0.01513696"
+       width="1.0302739"
+       height="1.0302739">
+      <feColorMatrix
+         in="SourceGraphic"
+         type="luminanceToAlpha"
+         result="result2"
+         id="feColorMatrix10596" />
+      <feSpecularLighting
+         result="result10"
+         specularExponent="15"
+         surfaceScale="-15"
+         specularConstant="1"
+         id="feSpecularLighting10600">
+        <feDistantLight
+           azimuth="225"
+           elevation="25"
+           id="feDistantLight10598" />
+      </feSpecularLighting>
+      <feComposite
+         in2="SourceGraphic"
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result9"
+         in="result10"
+         id="feComposite10602" />
+      <feComposite
+         in="result9"
+         operator="in"
+         result="fbSourceGraphic"
+         in2="SourceGraphic"
+         id="feComposite10604" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix10672" />
+      <feColorMatrix
+         id="feColorMatrix10674"
+         result="result2"
+         type="luminanceToAlpha"
+         in="fbSourceGraphic" />
+      <feDiffuseLighting
+         id="feDiffuseLighting10676"
+         diffuseConstant="0.5"
+         result="result1"
+         surfaceScale="-10">
+        <feDistantLight
+           id="feDistantLight10678"
+           elevation="20"
+           azimuth="225" />
+      </feDiffuseLighting>
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite10680"
+         result="result3"
+         k3="1"
+         k2="1"
+         k1="1"
+         in="result1"
+         operator="arithmetic" />
+      <feBlend
+         in2="result3"
+         id="feBlend10682"
+         result="result4"
+         mode="multiply"
+         in="result2" />
+      <feComposite
+         in2="result4"
+         id="feComposite10684"
+         result="result5"
+         operator="arithmetic"
+         k2="1.2" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite10686"
+         operator="in"
+         in="result5" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:url(#linearGradient9592);fill-opacity:1;fill-rule:evenodd;stroke:#6b0000;stroke-width:2.065;stroke-opacity:1"
+       id="rect6211"
+       width="68.210526"
+       height="68.210526"
+       x="45.947369"
+       y="64.894737"
+       ry="5.2916665"
+       inkscape:export-filename="/Users/camillo/MyCamillo/Development/dapp-blockchain/slot-dapp/web-ws-webpack/dist/public/img/panel2.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="display:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6b0000;stroke-width:2.065;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter10606)"
+       id="rect10576"
+       width="68.210526"
+       height="68.210526"
+       x="45.947369"
+       y="64.894737"
+       ry="5.2916665"
+       inkscape:export-filename="/Users/camillo/MyCamillo/Development/dapp-blockchain/slot-dapp/web-ws-webpack/dist/public/img/panel2.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

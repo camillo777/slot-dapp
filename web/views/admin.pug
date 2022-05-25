@@ -1,0 +1,12 @@
+html
+  head
+    title= title
+  body
+    h1= message
+    p Network URL #{ networkURL }
+    p Contract: #{ contractAmount }
+    p Jackpot: #{ jackpotAmount }
+    p Users:
+    ul
+        each user in users
+            li= user.publicAddress

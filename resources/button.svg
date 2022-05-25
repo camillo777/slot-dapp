@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="button.svg"
+   inkscape:export-filename="/Users/camillo/MyCamillo/Development/dapp-blockchain/slot-dapp/web-ws-webpack/dist/public/img/button3.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="251.5"
+     inkscape:cy="355.5"
+     inkscape:window-width="1312"
+     inkscape:window-height="855"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3797">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3793" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3795" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2301">
+      <stop
+         style="stop-color:#fb0000;stop-opacity:1"
+         offset="0"
+         id="stop2601" />
+      <stop
+         style="stop-color:#880000;stop-opacity:1"
+         offset="1"
+         id="stop2603" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2301"
+       id="radialGradient2700"
+       gradientUnits="userSpaceOnUse"
+       cx="92.84211"
+       cy="133.99615"
+       fx="92.84211"
+       fy="133.99615"
+       r="45" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3797"
+       id="linearGradient3799"
+       x1="91.482803"
+       y1="48.574848"
+       x2="91.482803"
+       y2="107.66865"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-0.52916667)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:url(#radialGradient2700);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect3486"
+       width="90"
+       height="90"
+       x="47.842106"
+       y="48.789471"
+       ry="10" />
+    <rect
+       style="display:inline;fill:url(#linearGradient3799);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.19309"
+       id="rect3486-1"
+       width="90"
+       height="47.933228"
+       x="47.842102"
+       y="48.260311"
+       ry="9.9999275" />
+    <rect
+       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#6b0000;stroke-width:2.065;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4482"
+       width="90"
+       height="90"
+       x="47.842106"
+       y="48.789471"
+       ry="10"
+       inkscape:export-filename="/Users/camillo/MyCamillo/Development/dapp-blockchain/slot-dapp/web-ws-webpack/dist/public/img/button3.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:label="rect4482" />
+  </g>
+</svg>

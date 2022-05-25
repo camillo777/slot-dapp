@@ -1,0 +1,135 @@
+import { ethers } from 'ethers'
+import assert from 'assert';
+import { Low, JSONFile } from 'lowdb'
+
+class Users {
+
+    tag = 'Users'
+
+    constructor() {
+        const adapter = new JSONFile( './users.json' )
+        this.db = new Low( adapter );
+        //this.users = this.db.data;
+    }
+
+    async init() {
+        await this.db.read();
+        if ( !this.db.data ) {
+            this.db.data = { users: [] };
+            console.log( this.tag, 'DB created' );
+        }
+        else {
+            console.log( this.tag, 'DB loaded' );
+        }
+    }
+
+    async getUser( userID ) {
+        console.log( this.tag, 'getUser', userID );
+        let user = await this.db.data.users.find( (user) => user.id == userID );
+        console.log( this.tag, user );
+        if (!user) throw `user id not found ${userID}`
+        return user;
+    }
+
+    /*async getUserByAddress( userAddress ) {
+        let user = await this.users.find((user) => user.address == userAddress);
+        if (!user) throw `user address not found ${userAddress}`
+        return user;
+    }*/
+
+    async joinRoom( userID, roomID ) {
+        console.log( this.tag, 'joinRoom', userID, roomID );
+        var user = await this.getUser( userID );
+        //await user.joinRoom( roomID );
+        user.rooms.push( roomID );
+        await this.db.write();
+    }
+
+    async userExists( userID ) {
+        console.log( this.tag, 'userExists', userID );
+        let user = await this.db.data.users.find( (user) => user.id == userID );
+        return user ? true : false;
+    }
+
+    async add( userID ) {
+        console.log( this.tag, 'add', userID );
+        if ( await this.userExists( userID ) ) {
+            console.log( this.tag, `User ${userID} already exist` );
+            return await this.getUser( userID );
+        }
+        var user = this.user( userID );
+        this.db.data.users.push( user );
+        await this.db.write();
+        return user;
+    }
+
+    async addUserAmount( userID, amount ) {
+        let user = await this.getUser( userID );
+        //await user.addAmount( amount );
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        user.amount = ethers.BigNumber.from(user.amount).add( amount );
+        await this.db.write();
+        return await user.amount;
+    }
+    async removeUserAmount( userID, amount ) {
+        let user = await this.getUser( userID );
+        //await user.removeAmount( amount );
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        user.amount = ethers.BigNumber.from(user.amount).sub( amount );
+        if (user.amount < 0) user.amount = ethers.BigNumber.from(0);
+        await this.db.write();
+        return await user.amount;
+    }
+    async getUserAmount( userID, amount ) {
+        let user = await this.getUser( userID );
+        return await user.amount;
+    }
+
+    async getUserRooms( userID ) {
+        console.log( this.tag, 'getUserRooms', userID );
+        var user = await this.getUser( userID );
+        return user.rooms;
+    }
+
+    user( userID ) {
+        return {
+            id: userID,
+            rooms: [],
+            address: null,
+            amount: ethers.BigNumber.from(0)
+        }
+    }
+}
+
+/*
+class User {
+    tag = 'User'
+
+    constructor( userID ) {
+        this.id = userID;
+        this.rooms = [];
+        this.address = null;
+        this.amount = ethers.BigNumber.from(0);
+    }
+
+    joinRoom( roomID ) {
+        this.rooms.push( roomID );
+    }
+
+    addAmount( amount ) {
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        this.amount = this.amount.add( amount );
+    }
+
+    removeAmount( amount ) {
+        assert( ethers.BigNumber.isBigNumber( amount ) );
+        this.amount = this.amount.sub( amount );
+        if (this.amount < 0) this.amount = ethers.BigNumber.from(0);
+    }
+
+    getAmount() {
+        return this.amount;
+    }
+}
+*/
+export { Users }
